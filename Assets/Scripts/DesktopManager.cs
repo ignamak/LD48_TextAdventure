@@ -23,7 +23,10 @@ public class DesktopManager : MonoBehaviour
     }
     public void CloseCurrentPanel()
     {
-        openPanel.SetActive(false);
+        if (openPanel != null && openPanel.activeInHierarchy)
+        {
+            openPanel.SetActive(false);
+        }
     }
     public void RestartGame()
     {
