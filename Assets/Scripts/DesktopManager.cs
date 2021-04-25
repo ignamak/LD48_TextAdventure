@@ -25,4 +25,8 @@ public class DesktopManager : MonoBehaviour
     {
         openPanel.SetActive(false);
     }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
