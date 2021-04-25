@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DesktopManager : MonoBehaviour
 {
+    public int delayToRestart = 2;
 
     GameObject openPanel;
 
@@ -14,6 +15,8 @@ public class DesktopManager : MonoBehaviour
     }
     public void OpenPanel(GameObject targetPanel)
     {
+        AudioManager.instance.Play("openPanelSound");
+
         if (openPanel)
         {
             openPanel.SetActive(false);
@@ -23,13 +26,28 @@ public class DesktopManager : MonoBehaviour
     }
     public void CloseCurrentPanel()
     {
-        if (openPanel != null && openPanel.activeInHierarchy)
+
+        if (openPanel)
         {
-            openPanel.SetActive(false);
+            AudioManager.instance.Play("closePanelSound");
+
+            if (openPanel != null && openPanel.activeInHierarchy)
+            {
+
+                openPanel.SetActive(false);
+            }
         }
     }
     public void RestartGame()
     {
+        StartCoroutine(LoadGameAgain());
+    }
+    IEnumerator LoadGameAgain()
+    {
+        AudioManager.instance.Play("restartSound");
+
+        yield return new WaitForSeconds(delayToRestart);
+
         SceneManager.LoadScene(0);
     }
 }
