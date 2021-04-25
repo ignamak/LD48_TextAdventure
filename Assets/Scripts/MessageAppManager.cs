@@ -33,7 +33,6 @@ public class MessageAppManager : MonoBehaviour
     void Start()
     {
         OpenConversation();
-
         dropdown.onValueChanged.AddListener(
             delegate 
             { 
@@ -51,7 +50,7 @@ public class MessageAppManager : MonoBehaviour
         
         //aiMessage.text = currentMessage.messageText;
     }
-    private void OpenConversation()
+    public void OpenConversation()
     {
         if (currentMessage != null)
         {
@@ -76,7 +75,7 @@ public class MessageAppManager : MonoBehaviour
     }
     public void newPlayerMessage()
     {
-        if (currentMessage != null && aiMessagePrefab != null)
+        if (currentMessage != null && aiMessagePrefab != null && currentMessage.playerAnswers.Length != 0)
         {
             playerAnswerPrefab.GetComponentInChildren<TextMeshProUGUI>().text = currentMessage.playerAnswers[optionChosenValue].answer;
             playerMes = Instantiate(playerAnswerPrefab);
@@ -91,9 +90,4 @@ public class MessageAppManager : MonoBehaviour
         Debug.Log("You have chosen: " + sender.value);
     }
 }
-[System.Serializable]
-public class list
-{
-    public List <AImessage> aiMessagesList = new List<AImessage>();
 
-}
