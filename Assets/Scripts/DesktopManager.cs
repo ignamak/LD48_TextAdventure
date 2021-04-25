@@ -26,22 +26,28 @@ public class DesktopManager : MonoBehaviour
     }
     public void CloseCurrentPanel()
     {
+
         if (openPanel)
         {
             AudioManager.instance.Play("closePanelSound");
-            openPanel.SetActive(false);
+
+            if (openPanel != null && openPanel.activeInHierarchy)
+            {
+
+                openPanel.SetActive(false);
+            }
         }
-    }
-    public void RestartGame()
-    {
-        StartCoroutine(LoadGameAgain());
-    }
-    IEnumerator LoadGameAgain()
-    {
-        AudioManager.instance.Play("restartSound");
+        void RestartGame()
+        {
+            StartCoroutine(LoadGameAgain());
+        }
+        IEnumerator LoadGameAgain()
+        {
+            AudioManager.instance.Play("restartSound");
 
-        yield return new WaitForSeconds(delayToRestart);
+            yield return new WaitForSeconds(delayToRestart);
 
-        SceneManager.LoadScene(0);
+            SceneManager.LoadScene(0);
+        }
     }
 }
