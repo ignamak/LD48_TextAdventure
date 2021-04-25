@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PopUpNotification : MonoBehaviour
 {
-    public GameObject SystemMessages;
 
     RectTransform rectTransform;
 
@@ -18,8 +17,8 @@ public class PopUpNotification : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        hidePosition = new Vector3(12f, -2.5f, 90);
-        showPosition = new Vector3(6.339028358459473f, -2.5f, 90);
+        hidePosition = new Vector3(1492.4100341796875f, 180.0f, 0);
+        showPosition = new Vector3(1098.4100341796875f, 180.0f, 0);
     }
 
     // Update is called once per frame
@@ -40,10 +39,10 @@ public class PopUpNotification : MonoBehaviour
         switch (movingNotification)
         {
             case true:
-                rectTransform.position = Vector3.MoveTowards(rectTransform.position, showPosition , 0.05f);
+                rectTransform.position = Vector3.MoveTowards(rectTransform.position, showPosition , 2f);
                 break;
             case false:
-                rectTransform.position = Vector3.MoveTowards(rectTransform.position, hidePosition, 0.1f);
+                rectTransform.position = Vector3.MoveTowards(rectTransform.position, hidePosition, 3.5f);
                 break;
         }
     }
@@ -53,12 +52,12 @@ public class PopUpNotification : MonoBehaviour
         movingNotification = inOut;      
     }
 
-    public void OnNotificationClick() 
+    public void OnNotificationClick(ButtonState button) 
     {
         MoveNotification(false);
 
         DesktopManager desktopManager = GameObject.FindObjectOfType<DesktopManager>();
-        desktopManager.CloseCurrentPanel();
+        desktopManager.OpenPanel(button);
         //desktopManager.OpenPanel(SystemMessages);
     }
 }
