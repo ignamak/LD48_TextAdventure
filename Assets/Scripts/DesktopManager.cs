@@ -1,31 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DesktopManager : MonoBehaviour
 {
 
     GameObject openPanel;
+    ButtonState currentButton; //ref to the script
 
     private void Start()
     {
         openPanel = null;
+        currentButton = null;
     }
-    public void OpenPanel(GameObject targetPanel)
+    public void OpenPanel(ButtonState b)
     {
-        if (openPanel)
-        {
-            openPanel.SetActive(false);
-        }
-        targetPanel.SetActive(true);
-        openPanel = targetPanel;
+        //if (currentButton)
+        //{
+        //    //openPanel.SetActive(false);
+        //    currentButton.associatedPanel.SetActive(false);
+        //    currentButton.ActiveButton();
+        //}
+        CloseCurrentPanel();
+        b.associatedPanel.SetActive(true);
+        b.SelectButton();
+        //openPanel = button.associatedPanel;
+        currentButton = b;
     }
     public void CloseCurrentPanel()
     {
-        if (openPanel != null && openPanel.activeInHierarchy)
+        //if (openPanel != null && openPanel.activeInHierarchy)
+        //{
+        //    openPanel.SetActive(false);
+        //}
+        if (currentButton)
         {
-            openPanel.SetActive(false);
+            currentButton.associatedPanel.SetActive(false);
+            currentButton.ActiveButton();
         }
     }
     public void RestartGame()

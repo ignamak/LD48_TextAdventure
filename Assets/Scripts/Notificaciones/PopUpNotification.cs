@@ -59,6 +59,6 @@ public class PopUpNotification : MonoBehaviour
 
         DesktopManager desktopManager = GameObject.FindObjectOfType<DesktopManager>();
         desktopManager.CloseCurrentPanel();
-        desktopManager.OpenPanel(SystemMessages);
+        //desktopManager.OpenPanel(SystemMessages);
     }
 }

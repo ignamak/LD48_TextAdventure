@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9d7c58e18c6f646bc373743e2b92fc, type: 3}
   m_Name: AI1_01
   m_EditorClassIdentifier: 
-  aiName: Juan
+  aiName: Kimberly S.
   messageText: Donde vas pantalones
   playerAnswers:
   - {fileID: 11400000, guid: 76c0d4609325b7d419ee65ab98ae8afa, type: 2}

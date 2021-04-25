@@ -10,6 +10,8 @@ public class ContactManager : MonoBehaviour
 
     public InputField inputField;
     public GameObject emptyConversation;
+    public Sprite bgSelectedConversation;
+    public Sprite bgConversation;
 
     [Header("AI 1")]
     public GameObject ai1Contact;
@@ -39,7 +41,6 @@ public class ContactManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -59,9 +60,21 @@ public class ContactManager : MonoBehaviour
         messageAppManager = GameObject.FindObjectOfType<MessageAppManager>().GetComponent<MessageAppManager>();
         openConversation = targetConversation;
     }
+    public void ChangeBgImages(GameObject selectedChat) //change the image background to visualize selected chat
+    {
+        foreach (var contact in allContacts)
+        {
+            Image bg = contact.GetComponent<Image>();
+            bg.sprite = bgConversation;
+            if (selectedChat == contact)
+                bg.sprite = bgSelectedConversation;
+                
+        }
+    }
     public void GetMessage()
     {
-        messageAppManager.newPlayerMessage();
+        if (openConversation)
+            messageAppManager.newPlayerMessage();
     }
     public void CloseCurrentPanel()
     {

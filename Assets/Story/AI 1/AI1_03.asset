@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9d7c58e18c6f646bc373743e2b92fc, type: 3}
   m_Name: AI1_03
   m_EditorClassIdentifier: 
-  aiName: 
+  aiName: Kimberly S.
   messageText: 'Compra pan '
   playerAnswers: []
