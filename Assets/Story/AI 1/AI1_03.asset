@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d96f536b0eadc1439f714a25372af1e, type: 3}
-  m_Name: P_AI1_01_03
+  m_Script: {fileID: 11500000, guid: ed9d7c58e18c6f646bc373743e2b92fc, type: 3}
+  m_Name: AI1_03
   m_EditorClassIdentifier: 
-  answer: al mercadona
-  aiMessage: {fileID: 11400000, guid: 8f68fa737029b3c4aa85b9859bf5e020, type: 2}
+  aiName: 
+  messageText: 'Compra pan '
+  playerAnswers: []
