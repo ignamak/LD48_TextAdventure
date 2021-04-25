@@ -9,7 +9,7 @@ public class PopUpNotification : MonoBehaviour
 
     RectTransform rectTransform;
 
-    Vector3 restPosition;
+    Vector3 hidePosition;
     Vector3 showPosition;
 
     bool movingNotification;
@@ -18,7 +18,7 @@ public class PopUpNotification : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        restPosition = new Vector3(12f, -2.5f, 90);
+        hidePosition = new Vector3(12f, -2.5f, 90);
         showPosition = new Vector3(6.339028358459473f, -2.5f, 90);
     }
 
@@ -43,7 +43,7 @@ public class PopUpNotification : MonoBehaviour
                 rectTransform.position = Vector3.MoveTowards(rectTransform.position, showPosition , 0.05f);
                 break;
             case false:
-                rectTransform.position = Vector3.MoveTowards(rectTransform.position, restPosition, 0.1f);
+                rectTransform.position = Vector3.MoveTowards(rectTransform.position, hidePosition, 0.1f);
                 break;
         }
     }

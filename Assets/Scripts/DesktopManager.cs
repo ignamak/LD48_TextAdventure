@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DesktopManager : MonoBehaviour
 {
+    public int delayToRestart = 2;
 
     GameObject openPanel;
     ButtonState currentButton; //ref to the script
@@ -17,32 +18,33 @@ public class DesktopManager : MonoBehaviour
     }
     public void OpenPanel(ButtonState b)
     {
-        //if (currentButton)
-        //{
-        //    //openPanel.SetActive(false);
-        //    currentButton.associatedPanel.SetActive(false);
-        //    currentButton.ActiveButton();
-        //}
         CloseCurrentPanel();
         b.associatedPanel.SetActive(true);
         b.SelectButton();
-        //openPanel = button.associatedPanel;
         currentButton = b;
     }
     public void CloseCurrentPanel()
     {
-        //if (openPanel != null && openPanel.activeInHierarchy)
-        //{
-        //    openPanel.SetActive(false);
-        //}
+
         if (currentButton)
         {
             currentButton.associatedPanel.SetActive(false);
             currentButton.ActiveButton();
+
+        AudioManager.instance.Play("openPanelSound");
+
         }
     }
     public void RestartGame()
     {
+        StartCoroutine(LoadGameAgain());
+    }
+    IEnumerator LoadGameAgain()
+    {
+        AudioManager.instance.Play("restartSound");
+
+        yield return new WaitForSeconds(delayToRestart);
+
         SceneManager.LoadScene(0);
     }
 }
