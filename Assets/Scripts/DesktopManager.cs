@@ -37,17 +37,17 @@ public class DesktopManager : MonoBehaviour
                 openPanel.SetActive(false);
             }
         }
-        void RestartGame()
-        {
-            StartCoroutine(LoadGameAgain());
-        }
-        IEnumerator LoadGameAgain()
-        {
-            AudioManager.instance.Play("restartSound");
+    }
+    public void RestartGame()
+    {
+        StartCoroutine(LoadGameAgain());
+    }
+    IEnumerator LoadGameAgain()
+    {
+        AudioManager.instance.Play("restartSound");
 
-            yield return new WaitForSeconds(delayToRestart);
+        yield return new WaitForSeconds(delayToRestart);
 
-            SceneManager.LoadScene(0);
-        }
+        SceneManager.LoadScene(0);
     }
 }
