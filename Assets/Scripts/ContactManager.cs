@@ -52,15 +52,18 @@ public class ContactManager : MonoBehaviour
         if (openConversation)
         {
             openConversation.SetActive(false);
-            
         }
         emptyConversation.SetActive(false);
         targetConversation.SetActive(true);
+
+        AudioManager.instance.Play("onClickSound");
+
         messageAppManager = GameObject.FindObjectOfType<MessageAppManager>().GetComponent<MessageAppManager>();
         openConversation = targetConversation;
     }
     public void GetMessage()
     {
+        AudioManager.instance.Play("onClickSound");
         messageAppManager.newPlayerMessage();
     }
     public void CloseCurrentPanel()
@@ -69,7 +72,7 @@ public class ContactManager : MonoBehaviour
     }
     public void CheckNumber()
     {
-        
+        AudioManager.instance.Play("onClickSound");
         if (int.Parse(inputField.text) == ai1Number)
         {
             ai1Contact.SetActive(true);
