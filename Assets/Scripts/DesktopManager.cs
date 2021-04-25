@@ -19,9 +19,13 @@ public class DesktopManager : MonoBehaviour
     public void OpenPanel(ButtonState b)
     {
         CloseCurrentPanel();
-        b.associatedPanel.SetActive(true);
-        b.SelectButton();
-        currentButton = b;
+        if (b)
+        {
+            b.associatedPanel.SetActive(true);
+            b.SelectButton();
+            currentButton = b;
+        }
+
     }
     public void CloseCurrentPanel()
     {
@@ -31,7 +35,7 @@ public class DesktopManager : MonoBehaviour
             currentButton.associatedPanel.SetActive(false);
             currentButton.ActiveButton();
 
-        AudioManager.instance.Play("openPanelSound");
+            //AudioManager.instance.Play("openPanelSound");
 
         }
     }

@@ -57,7 +57,7 @@ public class ContactManager : MonoBehaviour
         emptyConversation.SetActive(false);
         targetConversation.SetActive(true);
 
-        AudioManager.instance.Play("onClickSound");
+        //AudioManager.instance.Play("onClickSound");
 
         messageAppManager = GameObject.FindObjectOfType<MessageAppManager>().GetComponent<MessageAppManager>();
         openConversation = targetConversation;
