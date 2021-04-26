@@ -2986,12 +2986,12 @@ GameObject:
   - component: {fileID: 1840727798}
   - component: {fileID: 1840727797}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: ChatManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1840727797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3001,13 +3001,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1840727796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87c95efdd5466b247837ad40d8a89581, type: 3}
+  m_Script: {fileID: 11500000, guid: 780dcbc3fb60c0e47ba288a6b829157b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentKimMessage: {fileID: 11400000, guid: 3afcf1d46e69906429366aa7ffda3a22, type: 2}
-  currentJerryMessage: {fileID: 11400000, guid: 763ab048d39d4ad459c9086da8f84508, type: 2}
-  currentLauraMessage: {fileID: 0}
-  currentMarkMessage: {fileID: 0}
+  contactManager: {fileID: 8520953743638175884}
+  chatKim: {fileID: 8520953743638175883}
+  chatJerry: {fileID: 8520953743638175882}
+  chatLaura: {fileID: 8520953743638175881}
+  chatMark: {fileID: 8520953743638175880}
 --- !u!4 &1840727798
 Transform:
   m_ObjectHideFlags: 0
@@ -3377,6 +3378,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 855993834}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 669838393, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
       propertyPath: m_SizeDelta.x
       value: 50
@@ -3461,6 +3463,32 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
+=======
+    - target: {fileID: 9594795, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+      propertyPath: chatManager
+      value: 
+      objectReference: {fileID: 1840727797}
+    - target: {fileID: 833271151, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+      propertyPath: chatManager
+      value: 
+      objectReference: {fileID: 1840727797}
+    - target: {fileID: 1539973980, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+      propertyPath: chatManager
+      value: 
+      objectReference: {fileID: 1840727797}
+    - target: {fileID: 1539973980, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+      propertyPath: aiNameString
+      value: Kymberly S.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539973980, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+      propertyPath: currentMessage
+      value: 
+      objectReference: {fileID: 11400000, guid: c3aebde589171ca4fb0606371ecaf72a, type: 2}
+    - target: {fileID: 2031744078, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+      propertyPath: chatManager
+      value: 
+      objectReference: {fileID: 1840727797}
+>>>>>>> 5dbef038d8c0482803650a5b4919210cf6cd4b53
     - target: {fileID: 8520953744313709150, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3549,9 +3577,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Message app panel
       objectReference: {fileID: 0}
-    - target: {fileID: 8520953744313709151, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+--- !u!1 &8520953743638175880 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 833271149, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+  m_PrefabInstance: {fileID: 8520953743638175879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8520953743638175881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9594793, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+  m_PrefabInstance: {fileID: 8520953743638175879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8520953743638175882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2031744076, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+  m_PrefabInstance: {fileID: 8520953743638175879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8520953743638175883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4172973505836611905, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+  m_PrefabInstance: {fileID: 8520953743638175879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8520953743638175884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 946738446, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+  m_PrefabInstance: {fileID: 8520953743638175879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31997e348bedf9459b6cd605605eafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

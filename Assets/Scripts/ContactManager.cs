@@ -63,7 +63,7 @@ public class ContactManager : MonoBehaviour
             
         }
         messageAppManager = targetConversation.GetComponentInParent<MessageAppManager>();
-        if (messageAppManager.currentMessage.sent)
+        if (messageAppManager.currentMessageSent)
             messageAppManager.SetUpPlayerOptions();
         else
             messageAppManager.CheckConversationType();
@@ -95,6 +95,32 @@ public class ContactManager : MonoBehaviour
     {
         openConversation.SetActive(false);
     }
+
+    public void CheckNumber(int number)
+    {
+        AudioManager.instance.Play("onClickSound");
+        if (number == ai1Number)
+        {
+            ai1Contact.SetActive(true);
+            Debug.Log("contact active");
+        }
+        else if (number == ai2Number)
+        {
+            ai2Contact.SetActive(true);
+            Debug.Log("contact active");
+        }
+        else if (number == ai3Number)
+        {
+            ai3Contact.SetActive(true);
+            Debug.Log("contact active");
+        }
+        else if (number == ai4Number)
+        {
+            ai4Contact.SetActive(true);
+            Debug.Log("contact active");
+        }
+    }
+
     public void CheckNumber()
     {
         AudioManager.instance.Play("onClickSound");
@@ -103,22 +129,22 @@ public class ContactManager : MonoBehaviour
             ai1Contact.SetActive(true);
             Debug.Log("contact active");
         }
-        if (int.Parse(inputField.text) == ai2Number)
+        else if (int.Parse(inputField.text) == ai2Number)
         {
             ai2Contact.SetActive(true);
             Debug.Log("contact active");
         }
-        if (int.Parse(inputField.text) == ai3Number)
+        else if (int.Parse(inputField.text) == ai3Number)
         {
             ai3Contact.SetActive(true);
             Debug.Log("contact active");
         }
-        if (int.Parse(inputField.text) == ai4Number)
+        else if (int.Parse(inputField.text) == ai4Number)
         {
             ai4Contact.SetActive(true);
             Debug.Log("contact active");
         }
-        if (int.Parse(inputField.text) == loadAllContacts)
+        else if (int.Parse(inputField.text) == loadAllContacts)
         {
             for (int i = 0; i < allContacts.Length; i++)
             {

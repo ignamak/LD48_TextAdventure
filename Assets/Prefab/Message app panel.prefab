@@ -51,8 +51,15 @@ MonoBehaviour:
   messagePlaceHolder: {fileID: 531345866}
   conversationPanel: {fileID: 3953564252635450424}
   photoSprite: {fileID: 21300000, guid: 2db4f22422be71b41a23f9858798856d, type: 3}
+  chatManager: {fileID: 0}
+  aiNameString: ACORDARSE DE ESCRIBIR
   aItalking: 0
+<<<<<<< HEAD
   currentMessage: {fileID: 11400000, guid: 2bbf7610d37a2084c89acf673f1d3b65, type: 2}
+=======
+  currentMessageSent: 0
+  currentMessage: {fileID: 0}
+>>>>>>> 5dbef038d8c0482803650a5b4919210cf6cd4b53
 --- !u!1 &179062435
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,8 +856,15 @@ MonoBehaviour:
   messagePlaceHolder: {fileID: 669838392}
   conversationPanel: {fileID: 8503123979376566055}
   photoSprite: {fileID: 21300000, guid: 3f98eaec4ea886d48946d31d4c7d8d2e, type: 3}
+  chatManager: {fileID: 0}
+  aiNameString: ACORDARSE DE ESCRIBIR
   aItalking: 0
+<<<<<<< HEAD
   currentMessage: {fileID: 11400000, guid: 5d063fc871f301742991551f61790334, type: 2}
+=======
+  currentMessageSent: 0
+  currentMessage: {fileID: 0}
+>>>>>>> 5dbef038d8c0482803650a5b4919210cf6cd4b53
 --- !u!1 &911804918
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,8 +2277,11 @@ MonoBehaviour:
   messagePlaceHolder: {fileID: 1813161764}
   conversationPanel: {fileID: 8588050184050764611}
   photoSprite: {fileID: 21300000, guid: c6358a11958467547bcb6d6f733a35d7, type: 3}
+  chatManager: {fileID: 0}
+  aiNameString: ACORDARSE DE ESCRIBIR
   aItalking: 0
-  currentMessage: {fileID: 11400000, guid: 763ab048d39d4ad459c9086da8f84508, type: 2}
+  currentMessageSent: 0
+  currentMessage: {fileID: 0}
 --- !u!1 &2039391446
 GameObject:
   m_ObjectHideFlags: 0
@@ -3123,9 +3140,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &4747531116985854308
 CanvasRenderer:
@@ -3191,7 +3208,7 @@ GameObject:
   - component: {fileID: 5826517098983232143}
   m_Layer: 0
   m_Name: PanelAI3
-  m_TagString: Untagged
+  m_TagString: panel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3391,8 +3408,15 @@ MonoBehaviour:
   messagePlaceHolder: {fileID: 8520953743102374725}
   conversationPanel: {fileID: 5138315417401214903}
   photoSprite: {fileID: 21300000, guid: 05f7bc1b98d71434e8f176cecf930201, type: 3}
+  chatManager: {fileID: 0}
+  aiNameString: ACORDARSE DE ESCRIBIR
   aItalking: 0
+<<<<<<< HEAD
   currentMessage: {fileID: 11400000, guid: 2bbf7610d37a2084c89acf673f1d3b65, type: 2}
+=======
+  currentMessageSent: 0
+  currentMessage: {fileID: 11400000, guid: d48cdf54ba044a94281d63dcb2b77de4, type: 2}
+>>>>>>> 5dbef038d8c0482803650a5b4919210cf6cd4b53
 --- !u!1 &4686744473719889064
 GameObject:
   m_ObjectHideFlags: 0
@@ -3607,7 +3631,7 @@ GameObject:
   - component: {fileID: 9154500974387735890}
   m_Layer: 0
   m_Name: PanelAI1
-  m_TagString: Untagged
+  m_TagString: panel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4293,7 +4317,7 @@ GameObject:
   - component: {fileID: 7713456446701997929}
   m_Layer: 0
   m_Name: PanelAI4
-  m_TagString: Untagged
+  m_TagString: panel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5613,7 +5637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8520953744313709150
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6129,7 +6153,7 @@ GameObject:
   - component: {fileID: 3398427375237993808}
   m_Layer: 5
   m_Name: PanelAI2
-  m_TagString: Untagged
+  m_TagString: panel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
