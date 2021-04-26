@@ -49,7 +49,8 @@ MonoBehaviour:
   aiMessagePrefab: {fileID: 504556539212143572, guid: a7494bc9ae5a3694ba4488f03f462b27, type: 3}
   playerAnswerPrefab: {fileID: 8839632680193075104, guid: f8a18216686f7264c9afeb5645ca800d, type: 3}
   messagePlaceHolder: {fileID: 531345866}
-  photoSprite: {fileID: 0}
+  conversationPanel: {fileID: 3953564252635450424}
+  photoSprite: {fileID: 21300000, guid: 2db4f22422be71b41a23f9858798856d, type: 3}
   aItalking: 0
   currentMessage: {fileID: 11400000, guid: 763ab048d39d4ad459c9086da8f84508, type: 2}
 --- !u!1 &179062435
@@ -833,7 +834,8 @@ MonoBehaviour:
   aiMessagePrefab: {fileID: 504556539212143572, guid: a7494bc9ae5a3694ba4488f03f462b27, type: 3}
   playerAnswerPrefab: {fileID: 8839632680193075104, guid: f8a18216686f7264c9afeb5645ca800d, type: 3}
   messagePlaceHolder: {fileID: 669838392}
-  photoSprite: {fileID: 0}
+  conversationPanel: {fileID: 8503123979376566055}
+  photoSprite: {fileID: 21300000, guid: 3f98eaec4ea886d48946d31d4c7d8d2e, type: 3}
   aItalking: 0
   currentMessage: {fileID: 11400000, guid: 763ab048d39d4ad459c9086da8f84508, type: 2}
 --- !u!1 &911804918
@@ -2233,7 +2235,8 @@ MonoBehaviour:
   aiMessagePrefab: {fileID: 504556539212143572, guid: a7494bc9ae5a3694ba4488f03f462b27, type: 3}
   playerAnswerPrefab: {fileID: 8839632680193075104, guid: f8a18216686f7264c9afeb5645ca800d, type: 3}
   messagePlaceHolder: {fileID: 1813161764}
-  photoSprite: {fileID: 0}
+  conversationPanel: {fileID: 8588050184050764611}
+  photoSprite: {fileID: 21300000, guid: c6358a11958467547bcb6d6f733a35d7, type: 3}
   aItalking: 0
   currentMessage: {fileID: 11400000, guid: 763ab048d39d4ad459c9086da8f84508, type: 2}
 --- !u!1 &2039391446
@@ -3360,7 +3363,8 @@ MonoBehaviour:
   aiMessagePrefab: {fileID: 504556539212143572, guid: a7494bc9ae5a3694ba4488f03f462b27, type: 3}
   playerAnswerPrefab: {fileID: 8839632680193075104, guid: f8a18216686f7264c9afeb5645ca800d, type: 3}
   messagePlaceHolder: {fileID: 8520953743102374725}
-  photoSprite: {fileID: 0}
+  conversationPanel: {fileID: 5138315417401214903}
+  photoSprite: {fileID: 21300000, guid: 05f7bc1b98d71434e8f176cecf930201, type: 3}
   aItalking: 0
   currentMessage: {fileID: 11400000, guid: 3afcf1d46e69906429366aa7ffda3a22, type: 2}
 --- !u!1 &4686744473719889064
@@ -6760,7 +6764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3668686274326517194, guid: a80ced5c0dc74b34982885a07df120a8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3668686274326517194, guid: a80ced5c0dc74b34982885a07df120a8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -6768,7 +6772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3668686274326517194, guid: a80ced5c0dc74b34982885a07df120a8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3668686274326517194, guid: a80ced5c0dc74b34982885a07df120a8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -6808,11 +6812,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3668686274326517194, guid: a80ced5c0dc74b34982885a07df120a8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 212.09628
       objectReference: {fileID: 0}
     - target: {fileID: 3668686274326517194, guid: a80ced5c0dc74b34982885a07df120a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -58.000015
       objectReference: {fileID: 0}
     - target: {fileID: 3668686274326517194, guid: a80ced5c0dc74b34982885a07df120a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
