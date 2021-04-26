@@ -54,6 +54,8 @@ public class MessageAppManager : MonoBehaviour
             SetUpPlayerOptions();
         else
             OpenConversation();
+
+            
     }
     public void OpenConversation()
     {
@@ -127,6 +129,7 @@ public class MessageAppManager : MonoBehaviour
         typingText.gameObject.SetActive(false);
         messagePanel.SetActive(true);
         aItalking = false;
+        currentMessage.sent = true;
 
         if (currentMessage.conversationType == AImessage.Type.AI_STARTS_WAITING_PLAYER)
             SetUpPlayerOptions();

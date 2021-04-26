@@ -21,6 +21,8 @@ public class AImessage : ScriptableObject
     public Notification_SO launchedNotification;
     public AImessage launchedOtherAiMessage;
 
+    public bool sent = false;
+
     public string GetAIName()
     {
         return aiName;

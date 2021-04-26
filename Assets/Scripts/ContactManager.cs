@@ -63,7 +63,10 @@ public class ContactManager : MonoBehaviour
             
         }
         messageAppManager = targetConversation.GetComponentInParent<MessageAppManager>();
-        messageAppManager.CheckConversationType();
+        if (messageAppManager.currentMessage.sent)
+            messageAppManager.SetUpPlayerOptions();
+        else
+            messageAppManager.CheckConversationType();
 
 
 
@@ -83,9 +86,6 @@ public class ContactManager : MonoBehaviour
     }
     public void GetMessage()
     {
-
-        //if (openConversation)
-        //    messageAppManager.newPlayerMessage();
 
         AudioManager.instance.Play("onClickSound");
         messageAppManager.newPlayerMessage();
