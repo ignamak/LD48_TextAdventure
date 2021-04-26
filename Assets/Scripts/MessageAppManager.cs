@@ -20,7 +20,10 @@ public class MessageAppManager : MonoBehaviour
     public GameObject conversationPanel;
 
     public Sprite photoSprite;
+    public ChatManager chatManager;
+    public string aiNameString = "ACORDARSE DE ESCRIBIR";
     public bool aItalking;
+    public bool currentMessageSent = false;
 
     int optionChosenValue = 0;
 
@@ -43,7 +46,7 @@ public class MessageAppManager : MonoBehaviour
     {
         if (currentMessage != null)
         {
-            aiName.text = currentMessage.aiName;
+            aiName.text = aiNameString;
         }
         
         //aiMessage.text = currentMessage.messageText;
@@ -84,7 +87,6 @@ public class MessageAppManager : MonoBehaviour
     public void SetUpPlayerOptions()
     {
         aItalking = false;
-        print("SetUpPlayer" + conversationPanel.activeInHierarchy);
         if (conversationPanel.activeInHierarchy)
         {
             print("indicando opciones al jugador");
@@ -107,6 +109,7 @@ public class MessageAppManager : MonoBehaviour
             playerMes = Instantiate(playerAnswerPrefab);
             playerMes.transform.SetParent(messagePlaceHolder.transform);
             currentMessage = currentMessage.playerAnswers[optionChosenValue].aiMessage;
+            currentMessageSent = false;
             CheckConversationType();
         }
     }
@@ -123,13 +126,15 @@ public class MessageAppManager : MonoBehaviour
     {
         aiMes.SetActive(true);
         StartCoroutine(AITypingAnimation(typingText));
-        yield return new WaitForSeconds(currentMessage.messageText.Length * 0.125f);
+        yield return new WaitForSeconds(currentMessage.messageText.Length * 0.05f);
         StopCoroutine(AITypingAnimation(typingText));
         messageText.text = currentMessage.messageText;
         typingText.gameObject.SetActive(false);
         messagePanel.SetActive(true);
         aItalking = false;
-        currentMessage.sent = true;
+        currentMessageSent = true;
+        CheckIfLaunchedSomething();
+        //currentMessage.sent = true;
 
         if (currentMessage.conversationType == AImessage.Type.AI_STARTS_WAITING_PLAYER)
             SetUpPlayerOptions();
@@ -138,7 +143,17 @@ public class MessageAppManager : MonoBehaviour
             currentMessage = currentMessage.nextAiMessage;
             OpenConversation();
         }
+        else
+            dropdown.ClearOptions();
             
+    }
+
+    private void CheckIfLaunchedSomething()
+    {
+        if (currentMessage.launchedOtherAiMessage)
+        {
+            chatManager.CheckWhatChat(currentMessage.launchedOtherAiMessage);
+        }
     }
 
     IEnumerator AITypingAnimation(TextMeshProUGUI typingText)

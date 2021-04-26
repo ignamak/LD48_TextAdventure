@@ -10,7 +10,8 @@ public class AImessage : ScriptableObject
     {
         PLAYER_STARTS,
         AI_STARTS_FOLLOWS_TALKING,
-        AI_STARTS_WAITING_PLAYER
+        AI_STARTS_WAITING_PLAYER,
+        END_MESSAGE
     }
     public Type conversationType;
     [TextArea(10, 14)] public string messageText;
