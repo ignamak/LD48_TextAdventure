@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: P_Laura_Depth05
   m_EditorClassIdentifier: 
   answer: Do you want an exchange?
-  aiMessage: {fileID: 0}
+  aiMessage: {fileID: 11400000, guid: de7a3501f3b09b846bdc4b01c977d4aa, type: 2}
