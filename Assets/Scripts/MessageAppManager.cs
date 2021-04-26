@@ -18,6 +18,8 @@ public class MessageAppManager : MonoBehaviour
     private GameObject playerMes;
     public GameObject messagePlaceHolder;
 
+    public Sprite photoSprite;
+
 
     //int aiNumber = 0;
     int optionChosenValue = 0;
@@ -54,24 +56,36 @@ public class MessageAppManager : MonoBehaviour
     {
         if (currentMessage != null)
         {
-            aiMessagePrefab.GetComponentInChildren<TextMeshProUGUI>().text = currentMessage.messageText;
             aiMes = Instantiate(aiMessagePrefab);
             aiMes.transform.SetParent(messagePlaceHolder.transform);
+            aiMes.SetActive(false);
 
-            List<string> options = new List<string>();
+            TextMeshProUGUI typingText = aiMes.transform.Find("Text AI typing").GetComponent<TextMeshProUGUI>();
+            GameObject messagePanel = aiMes.transform.Find("Message Panel").gameObject;
+            TextMeshProUGUI messageText = messagePanel.transform.Find("Text AI message").GetComponent<TextMeshProUGUI>();
+            aiMes.transform.Find("Profile").GetComponent<Image>().sprite = photoSprite;
 
-            dropdown.ClearOptions();
+            StartCoroutine(AIReads(typingText, messagePanel, messageText));
 
-            foreach (var option in currentMessage.playerAnswers)
-            {
-                options.Add(option.answer);
-            }
-            dropdown.AddOptions(options);
         }
         if (currentMessage == null)
         {
             dropdown.ClearOptions();
         }
+    }
+
+    private void SetUpPlayerOptions()
+    {
+        print("indicando opciones al jugador");
+        List<string> options = new List<string>();
+
+        dropdown.ClearOptions();
+
+        foreach (var option in currentMessage.playerAnswers)
+        {
+            options.Add(option.answer);
+        }
+        dropdown.AddOptions(options);
     }
     public void newPlayerMessage()
     {
@@ -82,6 +96,44 @@ public class MessageAppManager : MonoBehaviour
             playerMes.transform.SetParent(messagePlaceHolder.transform);
             currentMessage = currentMessage.playerAnswers[optionChosenValue].aiMessage;
             OpenConversation();
+        }
+    }
+
+    IEnumerator AIReads(TextMeshProUGUI typingText, GameObject messagePanel, TextMeshProUGUI messageText)
+    {
+        print("IA leyendo");
+        yield return new WaitForSeconds(Random.Range(2,5));
+        // coroutine de puntitos
+        StartCoroutine(AITyping(typingText, messagePanel, messageText));
+
+    }
+
+    IEnumerator AITyping(TextMeshProUGUI typingText, GameObject messagePanel, TextMeshProUGUI messageText)
+    {
+        aiMes.SetActive(true);
+        StartCoroutine(AITypingAnimation(typingText));
+        yield return new WaitForSeconds(currentMessage.messageText.Length*0.2f);
+        StopCoroutine(AITypingAnimation(typingText));
+        messageText.text = currentMessage.messageText;
+        typingText.gameObject.SetActive(false);
+        messagePanel.SetActive(true);
+        SetUpPlayerOptions();
+    }
+
+    IEnumerator AITypingAnimation(TextMeshProUGUI typingText)
+    {
+        int counter = 0;
+        while (true)
+        {
+            counter++;
+            if (counter > 3)
+            {
+                typingText.text = "Typing";
+                counter = 0;
+            }
+            else
+                typingText.text += ".";
+            yield return new WaitForSeconds(0.5f);
         }
     }
     public void GetDropdownValue(Dropdown sender)
