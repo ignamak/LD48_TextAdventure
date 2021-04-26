@@ -3013,8 +3013,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c95efdd5466b247837ad40d8a89581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentKimMessage: {fileID: 11400000, guid: 3afcf1d46e69906429366aa7ffda3a22, type: 2}
-  currentJerryMessage: {fileID: 11400000, guid: 763ab048d39d4ad459c9086da8f84508, type: 2}
+  currentKimMessage: {fileID: 0}
+  currentJerryMessage: {fileID: 0}
   currentLauraMessage: {fileID: 0}
   currentMarkMessage: {fileID: 0}
 --- !u!4 &1840727798
@@ -3417,7 +3417,7 @@ PrefabInstance:
     - target: {fileID: 1539973980, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
       propertyPath: currentMessage
       value: 
-      objectReference: {fileID: 11400000, guid: 2bbf7610d37a2084c89acf673f1d3b65, type: 2}
+      objectReference: {fileID: 11400000, guid: d48cdf54ba044a94281d63dcb2b77de4, type: 2}
     - target: {fileID: 1539973980, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
       propertyPath: conversationPanel
       value: 

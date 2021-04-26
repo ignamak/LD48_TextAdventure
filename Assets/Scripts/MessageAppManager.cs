@@ -114,7 +114,7 @@ public class MessageAppManager : MonoBehaviour
     IEnumerator AIReads(TextMeshProUGUI typingText, GameObject messagePanel, TextMeshProUGUI messageText)
     {
         print("IA leyendo");
-        yield return new WaitForSeconds(Random.Range(2,5));
+        yield return new WaitForSeconds(Random.Range(0.5f,2f));
         StartCoroutine(AITyping(typingText, messagePanel, messageText));
 
     }
@@ -123,7 +123,7 @@ public class MessageAppManager : MonoBehaviour
     {
         aiMes.SetActive(true);
         StartCoroutine(AITypingAnimation(typingText));
-        yield return new WaitForSeconds(currentMessage.messageText.Length*0.2f);
+        yield return new WaitForSeconds(currentMessage.messageText.Length * 0.125f);
         StopCoroutine(AITypingAnimation(typingText));
         messageText.text = currentMessage.messageText;
         typingText.gameObject.SetActive(false);
