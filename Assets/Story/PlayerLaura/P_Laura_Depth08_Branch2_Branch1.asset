@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d96f536b0eadc1439f714a25372af1e, type: 3}
-  m_Name: P_Laura_Depth04
+  m_Name: P_Laura_Depth08_Branch2_Branch1
   m_EditorClassIdentifier: 
-  answer: Do you have any puzzle?
-  aiMessage: {fileID: 11400000, guid: 5c79fce2ff30ee94f8053d89cf014541, type: 2}
+  answer: I command you to send me yours
+  aiMessage: {fileID: 11400000, guid: c6ae7032deb4be94b9c47ac661c804a1, type: 2}
