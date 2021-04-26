@@ -58,8 +58,8 @@ public class ContactManager : MonoBehaviour
         targetConversation.SetActive(true);
 
         //AudioManager.instance.Play("onClickSound");
-
-        messageAppManager = GameObject.FindObjectOfType<MessageAppManager>().GetComponent<MessageAppManager>();
+        messageAppManager = targetConversation.GetComponent<MessageAppManager>();
+        messageAppManager.CheckConversationType();
         openConversation = targetConversation;
     }
     public void ChangeBgImages(GameObject selectedChat) //change the image background to visualize selected chat
@@ -76,8 +76,8 @@ public class ContactManager : MonoBehaviour
     public void GetMessage()
     {
 
-        if (openConversation)
-            messageAppManager.newPlayerMessage();
+        //if (openConversation)
+        //    messageAppManager.newPlayerMessage();
 
         AudioManager.instance.Play("onClickSound");
         messageAppManager.newPlayerMessage();

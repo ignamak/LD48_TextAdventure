@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: AI1_03
   m_EditorClassIdentifier: 
   aiName: Kimberly S.
+  conversationType: 2
   messageText: 'Compra pan '
-  playerAnswers: []
+  playerAnswers:
+  - {fileID: 11400000, guid: 76c0d4609325b7d419ee65ab98ae8afa, type: 2}
+  - {fileID: 11400000, guid: afc5285fc4d205a4096c862e37bfc2ca, type: 2}
+  nextAiMessage: {fileID: 0}

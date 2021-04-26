@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed9d7c58e18c6f646bc373743e2b92fc, type: 3}
-  m_Name: AI1_01
+  m_Name: AI1_prueba
   m_EditorClassIdentifier: 
   aiName: Kimberly S.
-  conversationType: 2
-  messageText: Donde vas pantalones
+  conversationType: 0
+  messageText: Prueba que no se ve
   playerAnswers:
-  - {fileID: 11400000, guid: 76c0d4609325b7d419ee65ab98ae8afa, type: 2}
-  - {fileID: 11400000, guid: afc5285fc4d205a4096c862e37bfc2ca, type: 2}
-  - {fileID: 11400000, guid: 48c09a8b6838f744d874da34a454db21, type: 2}
+  - {fileID: 11400000, guid: 9c8c768d31de39c42a509ee9f0a1c0f1, type: 2}
+  - {fileID: 11400000, guid: fdaa4983b825009438a699d181ea7ee7, type: 2}
   nextAiMessage: {fileID: 0}

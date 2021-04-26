@@ -20,13 +20,7 @@ public class MessageAppManager : MonoBehaviour
 
     public Sprite photoSprite;
 
-
-    //int aiNumber = 0;
     int optionChosenValue = 0;
-
-    //public int numberOfMessages = 0;
-
-    //public list[] ListOfAIS;
 
     public AImessage currentMessage;
 
@@ -34,7 +28,7 @@ public class MessageAppManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        OpenConversation();
+        CheckConversationType();
         dropdown.onValueChanged.AddListener(
             delegate 
             { 
@@ -52,10 +46,18 @@ public class MessageAppManager : MonoBehaviour
         
         //aiMessage.text = currentMessage.messageText;
     }
+    public void CheckConversationType()
+    {
+        if (currentMessage.conversationType == AImessage.Type.PLAYER_STARTS)
+            SetUpPlayerOptions();
+        else
+            OpenConversation();
+    }
     public void OpenConversation()
     {
         if (currentMessage != null)
         {
+            dropdown.ClearOptions();
             aiMes = Instantiate(aiMessagePrefab);
             aiMes.transform.SetParent(messagePlaceHolder.transform);
             aiMes.SetActive(false);
@@ -68,13 +70,13 @@ public class MessageAppManager : MonoBehaviour
             StartCoroutine(AIReads(typingText, messagePanel, messageText));
 
         }
-        if (currentMessage == null)
+        else if (currentMessage == null)
         {
             dropdown.ClearOptions();
         }
     }
 
-    private void SetUpPlayerOptions()
+    public void SetUpPlayerOptions()
     {
         print("indicando opciones al jugador");
         List<string> options = new List<string>();
@@ -95,7 +97,7 @@ public class MessageAppManager : MonoBehaviour
             playerMes = Instantiate(playerAnswerPrefab);
             playerMes.transform.SetParent(messagePlaceHolder.transform);
             currentMessage = currentMessage.playerAnswers[optionChosenValue].aiMessage;
-            OpenConversation();
+            CheckConversationType();
         }
     }
 
@@ -103,7 +105,6 @@ public class MessageAppManager : MonoBehaviour
     {
         print("IA leyendo");
         yield return new WaitForSeconds(Random.Range(2,5));
-        // coroutine de puntitos
         StartCoroutine(AITyping(typingText, messagePanel, messageText));
 
     }
@@ -117,7 +118,15 @@ public class MessageAppManager : MonoBehaviour
         messageText.text = currentMessage.messageText;
         typingText.gameObject.SetActive(false);
         messagePanel.SetActive(true);
-        SetUpPlayerOptions();
+
+        if (currentMessage.conversationType == AImessage.Type.AI_STARTS_WAITING_PLAYER)
+            SetUpPlayerOptions();
+        else if (currentMessage.conversationType == AImessage.Type.AI_STARTS_FOLLOWS_TALKING)
+        {
+            currentMessage = currentMessage.nextAiMessage;
+            OpenConversation();
+        }
+            
     }
 
     IEnumerator AITypingAnimation(TextMeshProUGUI typingText)

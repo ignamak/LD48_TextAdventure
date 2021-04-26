@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: AI1_02
   m_EditorClassIdentifier: 
   aiName: Kimberly S.
+  conversationType: 1
   messageText: "Eso est\xE1 bi\xE9n. Que apa\xF1ao que eres"
   playerAnswers:
   - {fileID: 11400000, guid: 76c0d4609325b7d419ee65ab98ae8afa, type: 2}
   - {fileID: 11400000, guid: afc5285fc4d205a4096c862e37bfc2ca, type: 2}
   - {fileID: 11400000, guid: 48c09a8b6838f744d874da34a454db21, type: 2}
+  nextAiMessage: {fileID: 11400000, guid: 8f68fa737029b3c4aa85b9859bf5e020, type: 2}
