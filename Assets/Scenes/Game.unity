@@ -2190,6 +2190,11 @@ MonoBehaviour:
   notificationSprite: {fileID: 0}
   buttonImage: {fileID: 1154760489}
   associatedPanel: {fileID: 0}
+--- !u!1 &1294107185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5138315417401214903, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+  m_PrefabInstance: {fileID: 8520953743638175879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1322538571
 GameObject:
   m_ObjectHideFlags: 0
@@ -3410,6 +3415,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1880201994, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1294107185}
     - target: {fileID: 2031744078, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
       propertyPath: photoSprite
       value: 
@@ -3426,9 +3435,29 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: -17
       objectReference: {fileID: 0}
+    - target: {fileID: 4172973505836611905, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138315417401214903, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289464536449716078, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8520953743102374723, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
       propertyPath: m_ChildAlignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520953743102374724, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520953743102374724, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8520953744313709150, guid: 09e58b62c8b98cb478b2e14fc6c5ac55, type: 3}
       propertyPath: m_Pivot.x

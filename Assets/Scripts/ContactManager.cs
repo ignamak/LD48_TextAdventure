@@ -53,13 +53,21 @@ public class ContactManager : MonoBehaviour
         if (openConversation)
         {
             openConversation.SetActive(false);
+            targetConversation.SetActive(true);
+            
         }
-        emptyConversation.SetActive(false);
-        targetConversation.SetActive(true);
-
-        //AudioManager.instance.Play("onClickSound");
-        messageAppManager = targetConversation.GetComponent<MessageAppManager>();
+        else
+        {
+            emptyConversation.SetActive(false);
+            targetConversation.SetActive(true);
+            
+        }
+        messageAppManager = targetConversation.GetComponentInParent<MessageAppManager>();
         messageAppManager.CheckConversationType();
+
+
+
+        //AudioManager.instance.Play("onClickSound");        
         openConversation = targetConversation;
     }
     public void ChangeBgImages(GameObject selectedChat) //change the image background to visualize selected chat

@@ -17,8 +17,10 @@ public class MessageAppManager : MonoBehaviour
     public GameObject playerAnswerPrefab;
     private GameObject playerMes;
     public GameObject messagePlaceHolder;
+    public GameObject conversationPanel;
 
     public Sprite photoSprite;
+    public bool aItalking;
 
     int optionChosenValue = 0;
 
@@ -28,7 +30,7 @@ public class MessageAppManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CheckConversationType();
+        //CheckConversationType();
         dropdown.onValueChanged.AddListener(
             delegate 
             { 
@@ -55,8 +57,9 @@ public class MessageAppManager : MonoBehaviour
     }
     public void OpenConversation()
     {
-        if (currentMessage != null)
+        if (currentMessage != null && !aItalking)
         {
+            aItalking = true;
             dropdown.ClearOptions();
             aiMes = Instantiate(aiMessagePrefab);
             aiMes.transform.SetParent(messagePlaceHolder.transform);
@@ -78,16 +81,21 @@ public class MessageAppManager : MonoBehaviour
 
     public void SetUpPlayerOptions()
     {
-        print("indicando opciones al jugador");
-        List<string> options = new List<string>();
-
-        dropdown.ClearOptions();
-
-        foreach (var option in currentMessage.playerAnswers)
+        aItalking = false;
+        print("SetUpPlayer" + conversationPanel.activeInHierarchy);
+        if (conversationPanel.activeInHierarchy)
         {
-            options.Add(option.answer);
+            print("indicando opciones al jugador");
+            List<string> options = new List<string>();
+
+            dropdown.ClearOptions();
+
+            foreach (var option in currentMessage.playerAnswers)
+            {
+                options.Add(option.answer);
+            }
+            dropdown.AddOptions(options);
         }
-        dropdown.AddOptions(options);
     }
     public void newPlayerMessage()
     {
@@ -118,6 +126,7 @@ public class MessageAppManager : MonoBehaviour
         messageText.text = currentMessage.messageText;
         typingText.gameObject.SetActive(false);
         messagePanel.SetActive(true);
+        aItalking = false;
 
         if (currentMessage.conversationType == AImessage.Type.AI_STARTS_WAITING_PLAYER)
             SetUpPlayerOptions();

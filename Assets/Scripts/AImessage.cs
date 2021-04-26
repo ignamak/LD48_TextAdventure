@@ -18,6 +18,9 @@ public class AImessage : ScriptableObject
     public PlayerAnswer[] playerAnswers;
     public AImessage nextAiMessage;
 
+    public Notification_SO launchedNotification;
+    public AImessage launchedOtherAiMessage;
+
     public string GetAIName()
     {
         return aiName;
