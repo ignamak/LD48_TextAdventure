@@ -9,7 +9,7 @@ public class MessageAppManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI aiName;
     //[SerializeField] TextMeshProUGUI aiMessage;
     //[SerializeField] TextMeshProUGUI playerAnswer;
-
+    public AutoScroll autoScroll;
     public Dropdown dropdown;
 
     public GameObject aiMessagePrefab;
@@ -45,7 +45,6 @@ public class MessageAppManager : MonoBehaviour
         {
             aiName.text = currentMessage.aiName;
         }
-        
         //aiMessage.text = currentMessage.messageText;
     }
     public void CheckConversationType()
@@ -107,6 +106,7 @@ public class MessageAppManager : MonoBehaviour
             playerMes = Instantiate(playerAnswerPrefab);
             playerMes.transform.SetParent(messagePlaceHolder.transform);
             currentMessage = currentMessage.playerAnswers[optionChosenValue].aiMessage;
+            autoScroll.SetAutoScroll();
             CheckConversationType();
         }
     }
@@ -115,6 +115,7 @@ public class MessageAppManager : MonoBehaviour
     {
         print("IA leyendo");
         yield return new WaitForSeconds(Random.Range(2,5));
+        yield return new WaitForSeconds(Random.Range(1,2));
         StartCoroutine(AITyping(typingText, messagePanel, messageText));
 
     }
@@ -124,6 +125,7 @@ public class MessageAppManager : MonoBehaviour
         aiMes.SetActive(true);
         StartCoroutine(AITypingAnimation(typingText));
         yield return new WaitForSeconds(currentMessage.messageText.Length*0.2f);
+        yield return new WaitForSeconds(currentMessage.messageText.Length*0.1f);
         StopCoroutine(AITypingAnimation(typingText));
         messageText.text = currentMessage.messageText;
         typingText.gameObject.SetActive(false);
@@ -131,8 +133,12 @@ public class MessageAppManager : MonoBehaviour
         aItalking = false;
         currentMessage.sent = true;
 
+        autoScroll.SetAutoScroll();
+
         if (currentMessage.conversationType == AImessage.Type.AI_STARTS_WAITING_PLAYER)
+        {
             SetUpPlayerOptions();
+        }
         else if (currentMessage.conversationType == AImessage.Type.AI_STARTS_FOLLOWS_TALKING)
         {
             currentMessage = currentMessage.nextAiMessage;
@@ -155,6 +161,7 @@ public class MessageAppManager : MonoBehaviour
             else
                 typingText.text += ".";
             yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
     public void GetDropdownValue(Dropdown sender)
